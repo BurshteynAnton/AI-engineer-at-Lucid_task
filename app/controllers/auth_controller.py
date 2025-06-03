@@ -5,7 +5,7 @@ from typing import List
 from app.schemas.auth import UserSignup, UserLogin, TokenResponse
 from app.schemas.user import UserResponse
 from app.services.auth_service import AuthService 
-from app.db.session import get_db
+from app.database import get_db
 from app.utils.exceptions import UserAlreadyExistsError, InvalidCredentialsError, UserNotFoundError 
 
 router = APIRouter()

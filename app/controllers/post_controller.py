@@ -4,7 +4,7 @@ from typing import List
 
 from app.schemas.post import PostCreate, PostResponse, PostCreateResponse, PostListResponse, PostDeleteResponse, PostUpdate
 from app.services.post_service import PostService 
-from app.db.session import get_db
+from app.database import get_db
 from app.core.security import get_password_hash
 from app.models.user import User 
 from app.utils.exceptions import PostNotFoundError 

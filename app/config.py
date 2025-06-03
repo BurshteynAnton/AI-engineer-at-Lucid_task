@@ -3,7 +3,7 @@ from typing import Optional
 
 
 class Settings(BaseSettings):
-    database_url: str = "mysql+pymysql://user:password@localhost:3306/blog_db"
+    database_url: str = "postgresql://postgres:password@localhost:5432/table_name"
     
     secret_key: str = "your-super-secret-key-change-in-production"
     algorithm: str = "HS256"
@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     cache_expire_minutes: int = 5
 
     api_v1_prefix: str = "/api/v1"
-    project_name: str = "FastAPI Blog API"
+    project_name: str = "FastAPI test API"
     debug: bool = False
     
     class Config:

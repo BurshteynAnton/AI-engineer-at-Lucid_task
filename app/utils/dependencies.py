@@ -1,6 +1,6 @@
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from app.db.session import get_db
+from app.database import get_db
 from app.services.auth_service import AuthService 
 from app.models.user import User
 from app.utils.exceptions import UserNotFoundError 

@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app.controllers import auth_controller, post_controller 
+from app.controllers.auth_controller import router as auth_router
+from app.controllers.post_controller import router as post_router
 from app.core.config import settings
 
 app = FastAPI(
@@ -9,21 +10,19 @@ app = FastAPI(
 )
 
 app.include_router(
-    auth_controller.router,
-    prefix=settings.api_v1_prefix, 
+    auth_router,
+    prefix=settings.api_v1_prefix,
     tags=["Users & Authentication"]
 )
 
-
 app.include_router(
-    post_controller.router, 
-    prefix=settings.api_v1_prefix, 
+    post_router,
+    prefix=settings.api_v1_prefix,
     tags=["Posts"]
 )
 
 @app.get("/")
 def read_root():
-
     return {"message": "Welcome to the FastAPI Blog API! See /docs for API documentation."}
 
 if __name__ == "__main__":
